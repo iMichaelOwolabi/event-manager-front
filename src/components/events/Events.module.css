@@ -1,0 +1,7 @@
+.events {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
