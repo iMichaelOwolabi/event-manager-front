@@ -1,25 +1,25 @@
 import styles from './Event.module.css';
 
-export const Event = () => {
+export const Event = (props) => {
+  const { title, description, category, location, startDate, imageUrl } = props.event;
   return (
     <div className={styles.event}>
       <div className={styles.event_card}>
         <img
-          src="https://res.cloudinary.com/imichaelowolabi/image/upload/v1656960166/pexels-in-cloudinary/event-manager-redis/pexels-teddy-yang-2263436.jpg"
+          src={imageUrl}
           alt="event"
-          className={styles}
+          className={styles.images}
         />
         <div className={styles.event_details}>
-          <p className={styles.title}>Music World Festival 3.0</p>
-          {/* <p>
-            Brief event description Brief event description Brief event
-            description
-          </p> */}
-          <p>
-            #concert
+          <p className={styles.title}>{title}</p>
+          <p className={styles.description}>
+            {description}...
           </p>
-          <p> 3rd floor Royal palace hotel</p>
-          <p className={styles.event_date}>2022-07-21</p>
+          <p>
+            #{category}
+          </p>
+          <p>{location}</p>
+          <p className={styles.event_date}>{ new Date(startDate).toDateString()}</p>
         </div>
       </div>
     </div>
